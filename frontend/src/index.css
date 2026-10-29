@@ -1,0 +1,431 @@
+
+
+/* global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1e293b;
+  background: #f1f5f9;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  background: #f1f5f9;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* application layout */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  background: #0f172a;
+  color: #ffffff;
+  padding: 18px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  box-shadow: 0 3px 12px rgba(15, 23, 42, 0.15);
+}
+
+.brand {
+  font-size: 24px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.brand span {
+  color: #60a5fa;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.navigation a {
+  color: #cbd5e1;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.navigation a:hover {
+  color: #ffffff;
+}
+
+.menu-button {
+  display: none;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 25px;
+}
+
+.main-content {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 35px 5%;
+  flex: 1;
+}
+
+.app-footer {
+  padding: 20px;
+  background: #0f172a;
+  color: #cbd5e1;
+  text-align: center;
+  font-size: 13px;
+}
+
+/* dashboard */
+.dashboard h2 {
+  color: #0f172a;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.dashboard > p {
+  color: #64748b;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.module-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.module-card {
+  display: block;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.module-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.1);
+}
+
+.module-card span {
+  display: inline-block;
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.module-card h3 {
+  color: #0f172a;
+  font-size: 18px;
+  margin-bottom: 18px;
+}
+
+.module-card p {
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* headings and content */
+h1,
+h2,
+h3 {
+  line-height: 1.4;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #0f172a;
+}
+
+h2 {
+  margin-bottom: 18px;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* forms */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  display: block;
+  color: #334155;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #0f172a;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  width: auto;
+}
+
+/* buttons */
+button,
+.btn {
+  display: inline-block;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  padding: 11px 18px;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+button:hover,
+.btn:hover {
+  background: #1d4ed8;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 3px;
+}
+
+button.secondary,
+.btn.secondary {
+  background: #475569;
+}
+
+button.danger {
+  background: #dc2626;
+}
+
+button.success {
+  background: #15803d;
+}
+
+/* tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th,
+td {
+  padding: 13px 15px;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: left;
+  font-size: 14px;
+}
+
+th {
+  background: #e2e8f0;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+tr:hover td {
+  background: #f8fafc;
+}
+
+/* status labels */
+.status {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.status.pending {
+  color: #92400e;
+  background: #fef3c7;
+}
+
+.status.completed,
+.status.approved {
+  color: #166534;
+  background: #dcfce7;
+}
+
+.status.rejected {
+  color: #991b1b;
+  background: #fee2e2;
+}
+
+/* cards and messages */
+.card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+}
+
+.message {
+  padding: 13px 16px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.message.success {
+  color: #166534;
+  background: #dcfce7;
+}
+
+.message.error {
+  color: #991b1b;
+  background: #fee2e2;
+}
+
+.empty-state {
+  padding: 30px;
+  text-align: center;
+  color: #64748b;
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+/* onboarding progress */
+.progress-container {
+  width: 100%;
+  height: 10px;
+  background: #e2e8f0;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 12px 0;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #2563eb;
+  transition: width 0.3s ease;
+}
+
+/* responsive layout */
+@media (max-width: 1000px) {
+  .module-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .navigation {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 700px) {
+  .app-header {
+    padding: 16px 5%;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .navigation {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 12px 0;
+  }
+
+  .navigation.open {
+    display: flex;
+  }
+
+  .main-content {
+    padding: 25px 5%;
+  }
+
+  .dashboard h2 {
+    font-size: 24px;
+  }
+
+  .module-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .module-card {
+    padding: 20px;
+  }
+
+  .card {
+    padding: 18px;
+    overflow-x: auto;
+  }
+
+  table {
+    min-width: 550px;
+  }
+}
